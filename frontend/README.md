@@ -38,7 +38,7 @@ mvn clean package -DskipTests=true
 cd target
 ```
 
-### 7. Run JAR File
+### 7. Run JAR File from target folder
 ```bash
 nohup java -jar datastore-0.0.7.jar > ~/datastore-nohup.out 2>&1 &  #if hard coded db crend
           or
