@@ -28,7 +28,7 @@ Update the RDS connection details in:
 Ensure the database URL, username, and password match your RDS instance configuration.
 
 ### 5. Build Application
-Run Maven build command from the backend directory:
+Run Maven build command from the backend directory, _DskipTests=true will skip connecting the database as credentials are there:
 ```bash
 mvn clean package -DskipTests=true
 ```
