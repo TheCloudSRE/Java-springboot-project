@@ -88,6 +88,11 @@ pip install -r requirements.txt
 ### 5. Run Application
 ```bash
 streamlit run app.py
+     or run using pm2
+pm2 start /root/myapp/venv/bin/streamlit \
+  --name streamlit-app \
+  --interpreter none \
+  -- run /root/myapp/app.py --server.address=0.0.0.0 --server.port=8501
 ```
 The frontend application will start on port **8501**.
 
