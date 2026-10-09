@@ -43,4 +43,16 @@ public class StudentController {
         List<Student> stuList = studentRepository.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(stuList);
     }
+    @RequestMapping(method = RequestMethod.DELETE, path = "/student/delete/{name}")
+private ResponseEntity<String> deleteStudent(@PathVariable("name") String name) {
+    logger.info("Deleting student by name : {}", name);
+
+    return studentRepository.findByName(name)
+            .map(student -> {
+                studentRepository.delete(student);
+                return ResponseEntity.ok("Student successfully deleted.");
+            })
+            .orElse(ResponseEntity.notFound().build());
+}
+
 }
